@@ -14,9 +14,7 @@ class DocFrame extends Component {
 
   render () {
     return (
-      <div>
-        <div ref={this.saveRef} />
-      </div>
+      <div style='height: 100%' ref={this.saveRef} />
     )
   }
 }
