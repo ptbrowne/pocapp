@@ -4,7 +4,7 @@ import DocFrame from './docframe'
 import { getFileInvoice } from './helpers'
 import { Modal } from 'cozy-ui/react'
 import * as Panel from 'cozy-ui/react/Panel'
-import logo from '!!file-loader!assets/icons/logo.png'
+import logo from '!!file-loader!assets/icons/logo.png' // eslint-disable-line
 
 const { ModalBrandedHeader } = Modal
 
