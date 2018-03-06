@@ -25,7 +25,7 @@
     "config:browser:development": "NODE_ENV=browser:development cozy-scripts --show-config",
     "config:mobile:production": "NODE_ENV=mobile:production cozy-scripts --show-config",
     "config:mobile:development": "NODE_ENV=mobile:development cozy-scripts --show-config",
-    "deploy": "git-directory-deploy --username lenn --email lenn.angel@serli.com --directory build/ --repo=https://$GITHUB_TOKEN@github.com/lenn/pocapp.git",
+    "deploy": "git-directory-deploy --directory build/ --repo=origin",
     "test": "npm-run-all --serial lint test:jest",
     "test:jest": "jest --verbose --coverage",
     "stack:docker": "docker run --rm -it -p 8080:8080 -p 5984:5984 -v \"$(pwd)/build\":/data/cozy-app/app cozy/cozy-app-dev",
@@ -73,15 +73,15 @@
     "redux-mock-store": "1.5.1",
     "sort-css-media-queries": "^1.3.4",
     "stats-webpack-plugin": "^0.6.1",
-    "stylint": "1.5.9",
-    "style-loader": "^0.20.2"
+    "style-loader": "^0.20.2",
+    "stylint": "1.5.9"
   },
   "dependencies": {
     "cozy-bar": "4.8.7",
     "cozy-client": "^0.4.2",
     "cozy-client-js": "0.6.2",
     "cozy-scripts": "0.5.0",
-    "cozy-ui": "7.2.1",
+    "cozy-ui": "git://github.com/cozy/cozy-ui.git#master",
     "preact": "8.2.7",
     "preact-compat": "3.18.0",
     "react-redux": "5.0.6",
