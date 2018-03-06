@@ -25,7 +25,7 @@
     "config:browser:development": "NODE_ENV=browser:development cozy-scripts --show-config",
     "config:mobile:production": "NODE_ENV=mobile:production cozy-scripts --show-config",
     "config:mobile:development": "NODE_ENV=mobile:development cozy-scripts --show-config",
-    "deploy": "git-directory-deploy --directory build/ --repo=origin",
+    "deploy": "git-directory-deploy --branch build --directory build/ --repo=origin",
     "test": "npm-run-all --serial lint test:jest",
     "test:jest": "jest --verbose --coverage",
     "stack:docker": "docker run --rm -it -p 8080:8080 -p 5984:5984 -v \"$(pwd)/build\":/data/cozy-app/app cozy/cozy-app-dev",
