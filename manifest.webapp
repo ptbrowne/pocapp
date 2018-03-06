@@ -1,0 +1,56 @@
+{
+  "name": "pocapp",
+  "slug": "app",
+  "icon": "icon.svg",
+  "description": "poc application for extended modal",
+  "category": "",
+  "version": "0.1.0",
+  "licence": "AGPL-3.0",
+  "source": "https://github.com/lenn/pocapp.git@build",
+  "developer": {
+    "name": "lenn",
+    "url": ""
+  },
+  "default_locale": "en",
+  "locales": {},
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/showbills": {
+      "folder": "/showbills",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "intents": [
+    {
+      "action": "SHOW",
+      "type": [
+        "io.cozy.bills"
+      ],
+      "href": "/"
+    }
+  ],
+  "permissions": {
+    "apps": {
+      "description": "Required by the cozy-bar to display the icons of the apps",
+      "type": "io.cozy.apps",
+      "verbs": [
+        "GET"
+      ]
+    },
+    "bills": {
+      "description": "Manage bills",
+      "type": "io.cozy.bills",
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ]
+    }
+  }
+}
