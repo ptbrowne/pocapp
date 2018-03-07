@@ -8,6 +8,25 @@ import logo from '!!file-loader!assets/icons/logo.png' // eslint-disable-line
 
 const { ModalBrandedHeader } = Modal
 
+const styles = {
+  container: {
+    'width': '100%',
+    'display': 'flex',
+    'flex-direction': 'column',
+    'align-items': 'stretch'
+  },
+  panelGroup: {
+    flex: '1 0 auto'
+  },
+  panelMain: {
+    overflow: 'visible',
+    padding: 0
+  },
+  panelSide: {
+    flexBasis: '25%'
+  }
+}
+
 class IntentHandler extends React.Component {
   constructor (props) {
     super(props)
@@ -78,19 +97,24 @@ class IntentHandler extends React.Component {
 
     if (docIntent && bill) {
       return (
-        <div style='width:100%'>
+        <div style={styles.container}>
           <ModalBrandedHeader bg='#f5f6f7' logo={logo} style={{marginBottom: 0}} />
-          <Panel.Group style={{height: '100%'}}>
-            <Panel.Main style={{padding: 0}}>
+          <Panel.Group style={styles.panelGroup}>
+            <Panel.Main style={styles.panelMain}>
               <DocFrame
                 intent={docIntent}
                 onSuccess={this.handleFileSuccess}
                 onError={this.handleFileError} />
             </Panel.Main>
-            <Panel.Side>
-              <h3>Numéro de sociétaire</h3><p>{bill.maifnumsocietaire}</p>
-              <h3>Date d'adhésion</h3><p>{bill.maifdateadhesion}</p>
-              <h3>Contacter MAIF</h3><p>{bill.maiftelephone}</p>
+            <Panel.Side style={styles.panelSide}>
+              <h3>Numéro de sociétaire</h3>
+              <p>{bill.maifnumsocietaire}</p>
+
+              <h3>Date d'adhésion</h3>
+              <p>{bill.maifdateadhesion}</p>
+
+              <h3>Contacter MAIF</h3>
+              <p>{bill.maiftelephone}</p>
             </Panel.Side>
           </Panel.Group>
         </div>
