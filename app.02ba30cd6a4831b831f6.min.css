@@ -1694,6 +1694,7 @@ html,
 body,
 [role=application] {
   height: 100% !important;
+  overflow: hidden;
 }
 .coz-btn--1rRxl[aria-busy=true] > span::after {
   content: '';
